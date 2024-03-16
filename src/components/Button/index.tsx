@@ -1,16 +1,21 @@
 import { ButtonHTMLAttributes, HTMLAttributes, ReactNode } from "react";
 
+type ButtonColor = "primary" | "white";
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
-  bgColor: string;
+  bgColor: ButtonColor;
 }
+
+const ClassButton = {
+  primary:
+    "bg-primary hover:brightness-90 hover:transition-all w-full min-h-12 rounded-lg",
+  white:
+    "bg-primary text-white hover:brightness-90 hover:transition-all w-full min-h-12 rounded-lg",
+};
 
 export const Button = ({ bgColor, children, ...rest }: ButtonProps) => {
   return (
-    <button
-      className={`bg-${bgColor} hover:brightness-90 hover:transition-all w-full min-h-12 rounded-lg `}
-      {...rest}
-    >
+    <button className={`${ClassButton[bgColor]}`} {...rest}>
       {children}
     </button>
   );
