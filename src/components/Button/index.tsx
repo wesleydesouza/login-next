@@ -10,7 +10,7 @@ const ClassButton = {
   primary:
     "bg-primary hover:brightness-90 hover:transition-all w-full min-h-12 rounded-lg",
   white:
-    "bg-primary text-white hover:brightness-90 hover:transition-all w-full min-h-12 rounded-lg",
+    "bg-white text-white hover:brightness-90 hover:transition-all w-full min-h-12 rounded-lg",
 };
 
 export const Button = ({ bgColor, children, ...rest }: ButtonProps) => {
